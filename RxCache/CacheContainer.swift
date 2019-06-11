@@ -9,6 +9,8 @@
 public final class CacheContainer {
     private static var instance: CacheContainer?
     
+    public var isEnabled: Bool = true
+    
     public static var instanceLazyInit: CacheContainer {
         if let instance = instance {
             return instance
@@ -35,6 +37,8 @@ public final class CacheContainer {
     }
     
     public func set<D>(data: D, for id: CacheIdentifier, in groupID: CacheGroupId? ) {
+        guard isEnabled else { return }
+        
         caches[id] = data
         cacheDataLifeTime[id] = Date()
         
@@ -45,7 +49,7 @@ public final class CacheContainer {
     }
     
     public func tryGet<D>(for id: CacheIdentifier) -> D? {
-        guard let data = caches[id] else { return nil }
+        guard isEnabled, let data = caches[id] else { return nil }
         
         guard let result = data as? D else { fatalError("Данные в кеше \(id)[\(data)] не соответсвуют типу \(D.self)") }
         
