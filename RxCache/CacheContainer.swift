@@ -49,7 +49,9 @@ public final class CacheContainer {
         caches[id] = data
         cacheDataLifeTime[id] = Date()
         
-        log("[SET] cacheId:\(id) time:\(Date()) data: \(data)")
+        if logEnabled {
+            log("[SET] cacheId:\(id) time:\(Date()) data: \(data)") 
+        }
         
         if let groupID = groupID {
             add(cacheId: id, to: groupID)
@@ -67,6 +69,7 @@ public final class CacheContainer {
         
         guard let result = data as? D else { fatalError("Данные в кеше \(id)[\(data)] не соответсвуют типу \(D.self)") }
         
+        log("[GET] cacheId:\(id) \(D.self)")
         return result
     }
     
