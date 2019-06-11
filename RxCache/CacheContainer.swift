@@ -10,6 +10,7 @@ public final class CacheContainer {
     private static var instance: CacheContainer?
     
     public var isEnabled: Bool = true
+    public var logEnabled: Bool = false
     
     public static var instanceLazyInit: CacheContainer {
         if let instance = instance {
@@ -34,6 +35,12 @@ public final class CacheContainer {
     
     public func set(options: [CacheGroupOption], for groupId: CacheGroupId) {
         cacheGroupOptions[groupId] = options
+        
+        if logEnabled {
+            let optString = options.map { "\($0)"}.joined(separator: ",")
+            log("[SET OPTIONS] groupId: \(groupId) options: \(optString)")
+        }
+        
     }
     
     public func set<D>(data: D, for id: CacheIdentifier, in groupID: CacheGroupId? ) {
@@ -42,6 +49,8 @@ public final class CacheContainer {
         caches[id] = data
         cacheDataLifeTime[id] = Date()
         
+        log("[SET] cacheId:\(id) time:\(Date()) data: \(data)")
+        
         if let groupID = groupID {
             add(cacheId: id, to: groupID)
             applyOptions(for: groupID)
@@ -49,7 +58,12 @@ public final class CacheContainer {
     }
     
     public func tryGet<D>(for id: CacheIdentifier) -> D? {
-        guard isEnabled, let data = caches[id] else { return nil }
+        guard isEnabled else { return nil }
+        
+        guard let data = caches[id] else {
+            log("[GET-notfound] cacheId:\(id) \(D.self)")
+            return nil
+        }
         
         guard let result = data as? D else { fatalError("Данные в кеше \(id)[\(data)] не соответсвуют типу \(D.self)") }
         
@@ -59,7 +73,9 @@ public final class CacheContainer {
     public func isDataExpired(for id: CacheIdentifier, maxTimelife: Seconds) -> Bool {
         guard var date = cacheDataLifeTime[id] else { return true }
         date.addTimeInterval(TimeInterval(maxTimelife))
-        return date.compare(Date()) == .orderedAscending
+        let result = date.compare(Date()) == .orderedAscending
+        log("[CHECK EXPIRATION] expired: \(result) cacheId:\(id) maxTimelife:\(maxTimelife) now: \(Date())")
+        return result
     }
     
     public func isFreshData(for id: CacheIdentifier, freshLifeTime: Seconds) -> Bool  {
@@ -70,7 +86,9 @@ public final class CacheContainer {
     private func add(cacheId: CacheIdentifier, to groupId: CacheGroupId) {
         if var groupCaches = cacheGroup[groupId] {
             groupCaches.append(cacheId)
+            log("[ADD TO GROUP] cacheId:\(cacheId) groupID:\(groupId)")
         } else {
+            log("[INIT CACHE GROUP] cacheId:\(cacheId) groupID:\(groupId)")
             cacheGroup[groupId] = [cacheId]
         }
     }
@@ -81,8 +99,14 @@ public final class CacheContainer {
         for option in options {
             switch option {
             case .maxGroupCaches(let maxCount):
+                log("[OPTION-maxGroupCaches] maxCount:\(maxCount) current: \(cacheGroup.count) groupID:\(groupId)")
                 if cacheGroup.count > maxCount { cacheGroup.removeFirst()  }
             }
         }
+    }
+    
+    private func log(_ event: String) {
+        guard logEnabled else { return }
+        print("🧺 \(event)")
     }
 }
