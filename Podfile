@@ -7,4 +7,12 @@ source 'https://github.com/CocoaPods/Specs.git'
 target :RxCache do
   pod 'RxSwift' 
 end
+
+target :RxCacheTests do
+  pod 'RxSwift'
+  pod 'RxBlocking'
+  pod 'RxTest'
+end
+
+
  
