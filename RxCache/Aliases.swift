@@ -9,4 +9,4 @@
 public typealias Seconds = Int
 public typealias CacheIdentifier = String
 public typealias CacheGroupId = String
- 
+public typealias ExpiredAfterSeconds = Seconds

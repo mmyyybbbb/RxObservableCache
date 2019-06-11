@@ -7,8 +7,8 @@
 //
 
 public enum CacheRule {
-    case readOnly(Seconds)
-    case readWrite(Seconds)
+    case readOnly(ExpiredAfterSeconds)
+    case readWrite(ExpiredAfterSeconds)
     case writeOnly
 }
 
