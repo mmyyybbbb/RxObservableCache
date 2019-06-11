@@ -17,4 +17,8 @@ public struct CacheAssociation<T> {
         self.rule = rule
         self.groupId = groupId
     }
+    
+    public init(_ cacheble: Cacheble, rule: CacheRule, groupId: CacheGroupId? = nil) {
+        self.init(cacheIdentifier: cacheble.cacheId, rule: rule, groupId: groupId)
+    }
 }

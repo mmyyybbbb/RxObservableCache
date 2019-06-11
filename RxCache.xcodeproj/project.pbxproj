@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0383203022B052CB0025B662 /* Cacheble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0383202F22B052CB0025B662 /* Cacheble.swift */; };
 		03FCF54D22B02E35000725CA /* RxCache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03FCF54322B02E35000725CA /* RxCache.framework */; };
 		03FCF55222B02E35000725CA /* RxCacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FCF55122B02E35000725CA /* RxCacheTests.swift */; };
 		03FCF55422B02E35000725CA /* RxCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 03FCF54622B02E35000725CA /* RxCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -31,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0383202F22B052CB0025B662 /* Cacheble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cacheble.swift; sourceTree = "<group>"; };
 		03FCF54322B02E35000725CA /* RxCache.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxCache.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		03FCF54622B02E35000725CA /* RxCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RxCache.h; sourceTree = "<group>"; };
 		03FCF54722B02E35000725CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				03FCF56822B032DB000725CA /* CacheContainer.swift */,
 				03FCF56222B03278000725CA /* CacheAssociation.swift */,
 				03FCF56422B032A3000725CA /* Observable+Cache.swift */,
+				0383202F22B052CB0025B662 /* Cacheble.swift */,
 				03FCF56622B032BD000725CA /* CacheGroupOption.swift */,
 				03FCF56022B0326A000725CA /* CacheRule.swift */,
 			);
@@ -316,6 +319,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				03FCF56922B032DB000725CA /* CacheContainer.swift in Sources */,
+				0383203022B052CB0025B662 /* Cacheble.swift in Sources */,
 				03FCF56722B032BD000725CA /* CacheGroupOption.swift in Sources */,
 				03FCF56322B03278000725CA /* CacheAssociation.swift in Sources */,
 				03FCF56522B032A3000725CA /* Observable+Cache.swift in Sources */,

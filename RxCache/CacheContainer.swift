@@ -52,13 +52,13 @@ public final class CacheContainer {
         return result
     }
     
-    public func isDataExpired(for id: CacheIdentifier, maxTimelife: TimeInterval) -> Bool {
+    public func isDataExpired(for id: CacheIdentifier, maxTimelife: Seconds) -> Bool {
         guard var date = cacheDataLifeTime[id] else { return true }
-        date.addTimeInterval(maxTimelife)
+        date.addTimeInterval(TimeInterval(maxTimelife))
         return date.compare(Date()) == .orderedAscending
     }
     
-    public func isFreshData(for id: CacheIdentifier, freshLifeTime: TimeInterval) -> Bool  {
+    public func isFreshData(for id: CacheIdentifier, freshLifeTime: Seconds) -> Bool  {
         return !isDataExpired(for: id, maxTimelife: freshLifeTime)
     }
     

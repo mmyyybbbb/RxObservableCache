@@ -6,7 +6,7 @@
 //  Copyright © 2019 alexeyne. All rights reserved.
 //
 
-public typealias ReadExpiration = TimeInterval
+public typealias Seconds = Int
 public typealias CacheIdentifier = String
 public typealias CacheGroupId = String
  

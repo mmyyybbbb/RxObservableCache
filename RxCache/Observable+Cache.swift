@@ -20,7 +20,7 @@ public extension Observable {
             
             let writeOnNext: (Element) -> Void = { cache.set(data: $0, for: id, in: groupId)  }
             
-            func fromCache(with lifeTime: ReadExpiration, or obs: Observable<Element>) -> Observable<Element> {
+            func fromCache(with lifeTime: Seconds, or obs: Observable<Element>) -> Observable<Element> {
                 guard cache.isFreshData(for: id, freshLifeTime: lifeTime),
                     let data: Element = cache.tryGet(for: id) else { return obs }
                 return .just(data)
