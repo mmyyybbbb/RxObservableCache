@@ -42,3 +42,9 @@ public extension Observable {
     } 
 }
 
+public extension Single {
+    
+    func associate(with association: CacheAssociation<Element>) -> Single<Element> {
+        return self.asObservable().take(1).associate(with: association).asSingle()
+    }
+}
