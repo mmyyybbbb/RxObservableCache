@@ -12,6 +12,13 @@ public final class CacheContainer {
     public var isEnabled: Bool = true
     public var logEnabled: Bool = false
     
+    public func clearAllCaches() {
+        cacheDataLifeTime = [:]
+        caches = [:]
+        cacheGroup = [:]
+        log("[CLEAR ALL]")
+    }
+    
     public static var instanceLazyInit: CacheContainer {
         if let instance = instance {
             return instance
@@ -22,9 +29,9 @@ public final class CacheContainer {
         return newInst
     }
     
-    private var cacheDataLifeTime: [CacheIdentifier: Date] = [:]
-    private var caches: [CacheIdentifier: Any] = [:]
-    private var cacheGroup: [CacheGroupId: [CacheIdentifier]] = [:]
+    public private(set) var cacheDataLifeTime: [CacheIdentifier: Date] = [:]
+    public private(set) var caches: [CacheIdentifier: Any] = [:]
+    public private(set) var cacheGroup: [CacheGroupId: [CacheIdentifier]] = [:]
     private var cacheGroupOptions: [CacheGroupId: [CacheGroupOption]] = [:]
     
     private init() { }
@@ -50,7 +57,7 @@ public final class CacheContainer {
         cacheDataLifeTime[id] = Date()
         
         if logEnabled {
-            log("[SET] cacheId:\(id) time:\(Date()) data: \(data)") 
+            log("[SET] cacheId:\(id) time:\(Date()) data: \(D.self)")
         }
         
         if let groupID = groupID {
