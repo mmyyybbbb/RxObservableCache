@@ -10,6 +10,13 @@
 		03FCF54D22B02E35000725CA /* RxCache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03FCF54322B02E35000725CA /* RxCache.framework */; };
 		03FCF55222B02E35000725CA /* RxCacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FCF55122B02E35000725CA /* RxCacheTests.swift */; };
 		03FCF55422B02E35000725CA /* RxCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 03FCF54622B02E35000725CA /* RxCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		03FCF55F22B0325F000725CA /* Aliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FCF55E22B0325F000725CA /* Aliases.swift */; };
+		03FCF56122B0326A000725CA /* CacheRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FCF56022B0326A000725CA /* CacheRule.swift */; };
+		03FCF56322B03278000725CA /* CacheAssociation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FCF56222B03278000725CA /* CacheAssociation.swift */; };
+		03FCF56522B032A3000725CA /* Observable+Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FCF56422B032A3000725CA /* Observable+Cache.swift */; };
+		03FCF56722B032BD000725CA /* CacheGroupOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FCF56622B032BD000725CA /* CacheGroupOption.swift */; };
+		03FCF56922B032DB000725CA /* CacheContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FCF56822B032DB000725CA /* CacheContainer.swift */; };
+		3476979458F81905E153099B /* Pods_RxCache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D41B5983DA473D52A37A8FA /* Pods_RxCache.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +36,16 @@
 		03FCF54C22B02E35000725CA /* RxCacheTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RxCacheTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		03FCF55122B02E35000725CA /* RxCacheTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxCacheTests.swift; sourceTree = "<group>"; };
 		03FCF55322B02E35000725CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		03FCF55D22B0307D000725CA /* RxCache.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = RxCache.podspec; sourceTree = "<group>"; };
+		03FCF55E22B0325F000725CA /* Aliases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Aliases.swift; sourceTree = "<group>"; };
+		03FCF56022B0326A000725CA /* CacheRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheRule.swift; sourceTree = "<group>"; };
+		03FCF56222B03278000725CA /* CacheAssociation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheAssociation.swift; sourceTree = "<group>"; };
+		03FCF56422B032A3000725CA /* Observable+Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+Cache.swift"; sourceTree = "<group>"; };
+		03FCF56622B032BD000725CA /* CacheGroupOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheGroupOption.swift; sourceTree = "<group>"; };
+		03FCF56822B032DB000725CA /* CacheContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheContainer.swift; sourceTree = "<group>"; };
+		50B677B8E4B58B84328FB604 /* Pods-RxCache.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxCache.release.xcconfig"; path = "Target Support Files/Pods-RxCache/Pods-RxCache.release.xcconfig"; sourceTree = "<group>"; };
+		65204E3503349054D4DD91D9 /* Pods-RxCache.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxCache.debug.xcconfig"; path = "Target Support Files/Pods-RxCache/Pods-RxCache.debug.xcconfig"; sourceTree = "<group>"; };
+		6D41B5983DA473D52A37A8FA /* Pods_RxCache.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxCache.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3476979458F81905E153099B /* Pods_RxCache.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,9 +71,12 @@
 		03FCF53922B02E35000725CA = {
 			isa = PBXGroup;
 			children = (
+				03FCF55D22B0307D000725CA /* RxCache.podspec */,
 				03FCF54522B02E35000725CA /* RxCache */,
 				03FCF55022B02E35000725CA /* RxCacheTests */,
 				03FCF54422B02E35000725CA /* Products */,
+				B0154BF76584628A26E9BABD /* Pods */,
+				ACC04EFF9B24AD7E7CF2D3E1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -73,6 +94,12 @@
 			children = (
 				03FCF54622B02E35000725CA /* RxCache.h */,
 				03FCF54722B02E35000725CA /* Info.plist */,
+				03FCF55E22B0325F000725CA /* Aliases.swift */,
+				03FCF56822B032DB000725CA /* CacheContainer.swift */,
+				03FCF56222B03278000725CA /* CacheAssociation.swift */,
+				03FCF56422B032A3000725CA /* Observable+Cache.swift */,
+				03FCF56622B032BD000725CA /* CacheGroupOption.swift */,
+				03FCF56022B0326A000725CA /* CacheRule.swift */,
 			);
 			path = RxCache;
 			sourceTree = "<group>";
@@ -84,6 +111,23 @@
 				03FCF55322B02E35000725CA /* Info.plist */,
 			);
 			path = RxCacheTests;
+			sourceTree = "<group>";
+		};
+		ACC04EFF9B24AD7E7CF2D3E1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6D41B5983DA473D52A37A8FA /* Pods_RxCache.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B0154BF76584628A26E9BABD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				65204E3503349054D4DD91D9 /* Pods-RxCache.debug.xcconfig */,
+				50B677B8E4B58B84328FB604 /* Pods-RxCache.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -104,6 +148,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 03FCF55722B02E35000725CA /* Build configuration list for PBXNativeTarget "RxCache" */;
 			buildPhases = (
+				22E95D633D7DAFC400F8C390 /* [CP] Check Pods Manifest.lock */,
 				03FCF53E22B02E35000725CA /* Headers */,
 				03FCF53F22B02E35000725CA /* Sources */,
 				03FCF54022B02E35000725CA /* Frameworks */,
@@ -148,6 +193,7 @@
 				TargetAttributes = {
 					03FCF54222B02E35000725CA = {
 						CreatedOnToolsVersion = 11.0;
+						LastSwiftMigration = 1100;
 					};
 					03FCF54B22B02E35000725CA = {
 						CreatedOnToolsVersion = 11.0;
@@ -190,11 +236,42 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		22E95D633D7DAFC400F8C390 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RxCache-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		03FCF53F22B02E35000725CA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03FCF56922B032DB000725CA /* CacheContainer.swift in Sources */,
+				03FCF56722B032BD000725CA /* CacheGroupOption.swift in Sources */,
+				03FCF56322B03278000725CA /* CacheAssociation.swift in Sources */,
+				03FCF56522B032A3000725CA /* Observable+Cache.swift in Sources */,
+				03FCF56122B0326A000725CA /* CacheRule.swift in Sources */,
+				03FCF55F22B0325F000725CA /* Aliases.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,7 +416,9 @@
 		};
 		03FCF55822B02E35000725CA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 65204E3503349054D4DD91D9 /* Pods-RxCache.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 3BVL9BNASU;
@@ -348,6 +427,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = RxCache/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -356,6 +436,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ru.alexeyne.RxCache;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -363,7 +444,9 @@
 		};
 		03FCF55922B02E35000725CA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 50B677B8E4B58B84328FB604 /* Pods-RxCache.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 3BVL9BNASU;
@@ -372,6 +455,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = RxCache/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -388,6 +472,7 @@
 		03FCF55B22B02E35000725CA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3BVL9BNASU;
 				INFOPLIST_FILE = RxCacheTests/Info.plist;
@@ -406,6 +491,7 @@
 		03FCF55C22B02E35000725CA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3BVL9BNASU;
 				INFOPLIST_FILE = RxCacheTests/Info.plist;
