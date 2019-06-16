@@ -1,4 +1,6 @@
+Swift 5.0
 # RxObservableCache 
+
 Позволяет кешировать данные для Observable 
 
 Cocoapods:
