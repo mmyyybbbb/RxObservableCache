@@ -5,7 +5,7 @@ Allows you to cache data for Observable
 
 Cocoapods:
 ```ruby
-pod 'RxObservableCache', '~> 1.0.6'
+pod 'RxObservableCache', '~> 2.0.0'
 ```
 
 ## How to use
