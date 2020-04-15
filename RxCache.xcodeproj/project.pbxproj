@@ -45,7 +45,7 @@
 		03FCF56422B032A3000725CA /* Observable+Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+Cache.swift"; sourceTree = "<group>"; };
 		03FCF56622B032BD000725CA /* CacheGroupOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheGroupOption.swift; sourceTree = "<group>"; };
 		03FCF56822B032DB000725CA /* CacheContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheContainer.swift; sourceTree = "<group>"; };
-		03FCF56A22B039E8000725CA /* RxObservableCache.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = RxObservableCache.podspec; sourceTree = SOURCE_ROOT; };
+		03FCF56A22B039E8000725CA /* RxObservableCache.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; path = RxObservableCache.podspec; sourceTree = SOURCE_ROOT; };
 		0901343F92AC43B23162C7C7 /* Pods-RxCacheTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxCacheTests.release.xcconfig"; path = "Target Support Files/Pods-RxCacheTests/Pods-RxCacheTests.release.xcconfig"; sourceTree = "<group>"; };
 		50B677B8E4B58B84328FB604 /* Pods-RxCache.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxCache.release.xcconfig"; path = "Target Support Files/Pods-RxCache/Pods-RxCache.release.xcconfig"; sourceTree = "<group>"; };
 		65204E3503349054D4DD91D9 /* Pods-RxCache.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxCache.debug.xcconfig"; path = "Target Support Files/Pods-RxCache/Pods-RxCache.debug.xcconfig"; sourceTree = "<group>"; };
