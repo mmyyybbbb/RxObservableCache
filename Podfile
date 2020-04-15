@@ -5,7 +5,7 @@ inhibit_all_warnings!
 source 'https://github.com/CocoaPods/Specs.git'
  
 target :RxCache do
-  pod 'RxSwift', '~> 5.0.1' 
+  pod 'RxSwift', '~> 5.1.0' 
 end
 
 target :RxCacheTests do
