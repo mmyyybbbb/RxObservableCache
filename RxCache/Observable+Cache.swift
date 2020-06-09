@@ -21,20 +21,38 @@ public extension Observable {
             let writeOnNext: (Element) -> Void = { cache.set(data: $0, for: id, in: groupId)  }
             
             func fromCache(with lifeTime: Seconds, or obs: Observable<Element>) -> Observable<Element> {
-                guard cache.isFreshData(for: id, freshLifeTime: lifeTime),
-                    let data: Element = cache.tryGet(for: id) else { return obs }
-                return .just(data)
+                guard cache.isFreshData(for: id, freshLifeTime: lifeTime) else {
+                    
+                    if let shared: Observable<Element> = cache.tryGetSharedObs(for: id) {
+                        return shared
+                    } else {
+                        cache.setSharedObs(data: obs, for: id, in: groupId)
+                        return obs
+                    } 
+                }
+                
+                if let data: Element = cache.tryGet(for: id) {
+                    return .just(data)
+                } else if let shared: Observable<Element> = cache.tryGetSharedObs(for: id) {
+                    return shared
+                } else {
+                    cache.setSharedObs(data: obs, for: id, in: groupId)
+                    return obs
+                }
             }
+
+            let sharedObs = self.share(replay: 1, scope: .whileConnected)
             
             switch association.rule {
             case .writeOnly:
-                return self.do(onNext: writeOnNext)
+                cache.setSharedObs(data: sharedObs, for: id, in: groupId)
+                return sharedObs.do(onNext: writeOnNext)
                 
             case let .readOnly(lifeTime):
-                return fromCache(with: lifeTime, or: self)
+                return fromCache(with: lifeTime, or: sharedObs)
                 
             case let .readWrite(lifeTime):
-                return fromCache(with: lifeTime, or: self.do(onNext: writeOnNext))
+                return fromCache(with: lifeTime, or: sharedObs.do(onNext: writeOnNext))
             }
         }
         

@@ -6,8 +6,11 @@
 //  Copyright © 2019 alexeyne. All rights reserved.
 //
 
+import RxSwift
+
 public final class CacheContainer {
     private static var instance: CacheContainer?
+    private var disposeBag = DisposeBag()
     
     public var isEnabled: Bool = true
     public var logEnabled: Bool = false
@@ -17,6 +20,7 @@ public final class CacheContainer {
         caches = [:]
         cacheGroup = [:]
         log("[CLEAR ALL]")
+        disposeBag = DisposeBag()
     }
     
     public static var instanceLazyInit: CacheContainer {
@@ -31,6 +35,7 @@ public final class CacheContainer {
     
     public private(set) var cacheDataLifeTime: [CacheIdentifier: Date] = [:]
     public private(set) var caches: [CacheIdentifier: Any] = [:]
+    public private(set) var sharedObs: [CacheIdentifier: Any] = [:]
     public private(set) var cacheGroup: [CacheGroupId: [CacheIdentifier]] = [:]
     private var cacheGroupOptions: [CacheGroupId: [CacheGroupOption]] = [:]
     
@@ -48,6 +53,38 @@ public final class CacheContainer {
             log("[SET OPTIONS] groupId: \(groupId) options: \(optString)")
         }
         
+    }
+    
+    public func tryGetSharedObs<D>(for id: CacheIdentifier) -> Observable<D>? {
+        guard isEnabled else { return nil }
+        
+        guard let data = sharedObs[id] else {
+            log("[GET-shared-notfound] cacheId:\(id) \(D.self)")
+            return nil
+        }
+        
+        guard let result = data as? Observable<D> else { fatalError("Данные в кеше \(id)[\(data)] не соответсвуют типу \(Observable<D>.self)") }
+        
+        log("[GET] cacheId:\(id) \(Observable<D>.self)")
+        return result
+    }
+    
+    
+    public func setSharedObs<D>(data: Observable<D>, for id: CacheIdentifier, in groupID: CacheGroupId? ) {
+        guard isEnabled else { return }
+        
+        sharedObs[id] = data.do(onDispose: { [weak self] in
+            self?.sharedObs[id] = nil
+        })
+        
+        if logEnabled {
+            log("[SET-shared] cacheId:\(id) time:\(Date()) data: \(D.self)")
+        }
+        
+        if let groupID = groupID {
+            add(cacheId: id, to: groupID)
+            applyOptions(for: groupID)
+        }
     }
     
     public func set<D>(data: D, for id: CacheIdentifier, in groupID: CacheGroupId? ) {

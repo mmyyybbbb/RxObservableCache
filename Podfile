@@ -12,6 +12,7 @@ target :RxCacheTests do
   pod 'RxSwift'
   pod 'RxBlocking'
   pod 'RxTest'
+  pod 'RxCocoa'
 end
 
 
