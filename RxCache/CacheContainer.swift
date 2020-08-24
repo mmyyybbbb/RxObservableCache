@@ -16,9 +16,9 @@ public final class CacheContainer {
     public var logEnabled: Bool = false
     
     public func clearAllCaches() {
-        cacheDataLifeTime = [:]
-        caches = [:]
-        cacheGroup = [:]
+        cacheDataLifeTime = .init([:])
+        caches = .init([:])
+        cacheGroup = .init([:])
         log("[CLEAR ALL]")
         disposeBag = DisposeBag()
     }
@@ -33,11 +33,18 @@ public final class CacheContainer {
         return newInst
     }
     
-    public private(set) var cacheDataLifeTime: [CacheIdentifier: Date] = [:]
-    public private(set) var caches: [CacheIdentifier: Any] = [:]
-    public private(set) var sharedObs: [CacheIdentifier: Any] = [:]
-    public private(set) var cacheGroup: [CacheGroupId: [CacheIdentifier]] = [:]
-    private var cacheGroupOptions: [CacheGroupId: [CacheGroupOption]] = [:]
+//    public private(set) var cacheDataLifeTime: [CacheIdentifier: Date] = [:]
+//    public private(set) var caches: [CacheIdentifier: Any] = [:]
+//    public private(set) var sharedObs: [CacheIdentifier: Any] = [:]
+//    public private(set) var cacheGroup: [CacheGroupId: [CacheIdentifier]] = [:]
+//    private var cacheGroupOptions: [CacheGroupId: [CacheGroupOption]] = [:]
+    
+    public private(set) var cacheDataLifeTime: ThreadSafeDictionary<CacheIdentifier, Date> = .init([:])
+    public private(set) var caches: ThreadSafeDictionary<CacheIdentifier, Any> = .init([:])
+    public private(set) var sharedObs: ThreadSafeDictionary<CacheIdentifier, Any> = .init([:])
+    public private(set) var cacheGroup: ThreadSafeDictionary<CacheIdentifier, [CacheIdentifier]> = .init([:])
+    private var cacheGroupOptions: ThreadSafeDictionary<CacheIdentifier, [CacheGroupOption]> = .init([:])
+    
     
     private init() { }
     

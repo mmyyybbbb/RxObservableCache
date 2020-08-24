@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'RxObservableCache'
-  s.version          = '2.3.0'
+  s.version          = '2.4.0'
   s.summary          = 'Cache for Rx observable'
   s.homepage         = 'https://github.com/BCS-Broker/RxObservableCache'
   s.author           = { "Alexey Nenast'ev" => "a-nenastev@mail.ru" }

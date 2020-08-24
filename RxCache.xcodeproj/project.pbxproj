@@ -17,6 +17,7 @@
 		03FCF56522B032A3000725CA /* Observable+Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FCF56422B032A3000725CA /* Observable+Cache.swift */; };
 		03FCF56722B032BD000725CA /* CacheGroupOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FCF56622B032BD000725CA /* CacheGroupOption.swift */; };
 		03FCF56922B032DB000725CA /* CacheContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FCF56822B032DB000725CA /* CacheContainer.swift */; };
+		2FCA8CB524F3FCE80042E96E /* ThreadSafeDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCA8CB424F3FCE80042E96E /* ThreadSafeDictionary.swift */; };
 		3476979458F81905E153099B /* Pods_RxCache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D41B5983DA473D52A37A8FA /* Pods_RxCache.framework */; };
 		BF90588E353795794559A248 /* Pods_RxCacheTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA26A91C60A87994E8CD1166 /* Pods_RxCacheTests.framework */; };
 /* End PBXBuildFile section */
@@ -47,6 +48,7 @@
 		03FCF56822B032DB000725CA /* CacheContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheContainer.swift; sourceTree = "<group>"; };
 		03FCF56A22B039E8000725CA /* RxObservableCache.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; path = RxObservableCache.podspec; sourceTree = SOURCE_ROOT; };
 		0901343F92AC43B23162C7C7 /* Pods-RxCacheTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxCacheTests.release.xcconfig"; path = "Target Support Files/Pods-RxCacheTests/Pods-RxCacheTests.release.xcconfig"; sourceTree = "<group>"; };
+		2FCA8CB424F3FCE80042E96E /* ThreadSafeDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadSafeDictionary.swift; sourceTree = "<group>"; };
 		50B677B8E4B58B84328FB604 /* Pods-RxCache.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxCache.release.xcconfig"; path = "Target Support Files/Pods-RxCache/Pods-RxCache.release.xcconfig"; sourceTree = "<group>"; };
 		65204E3503349054D4DD91D9 /* Pods-RxCache.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxCache.debug.xcconfig"; path = "Target Support Files/Pods-RxCache/Pods-RxCache.debug.xcconfig"; sourceTree = "<group>"; };
 		6D41B5983DA473D52A37A8FA /* Pods_RxCache.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxCache.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -99,6 +101,7 @@
 		03FCF54522B02E35000725CA /* RxCache */ = {
 			isa = PBXGroup;
 			children = (
+				2FCA8CB324F3FCDA0042E96E /* ThreadSafe */,
 				03FCF54622B02E35000725CA /* RxCache.h */,
 				03FCF54722B02E35000725CA /* Info.plist */,
 				03FCF55E22B0325F000725CA /* Aliases.swift */,
@@ -119,6 +122,14 @@
 				03FCF55322B02E35000725CA /* Info.plist */,
 			);
 			path = RxCacheTests;
+			sourceTree = "<group>";
+		};
+		2FCA8CB324F3FCDA0042E96E /* ThreadSafe */ = {
+			isa = PBXGroup;
+			children = (
+				2FCA8CB424F3FCE80042E96E /* ThreadSafeDictionary.swift */,
+			);
+			path = ThreadSafe;
 			sourceTree = "<group>";
 		};
 		ACC04EFF9B24AD7E7CF2D3E1 /* Frameworks */ = {
@@ -320,6 +331,7 @@
 			files = (
 				03FCF56922B032DB000725CA /* CacheContainer.swift in Sources */,
 				0383203022B052CB0025B662 /* Cacheble.swift in Sources */,
+				2FCA8CB524F3FCE80042E96E /* ThreadSafeDictionary.swift in Sources */,
 				03FCF56722B032BD000725CA /* CacheGroupOption.swift in Sources */,
 				03FCF56322B03278000725CA /* CacheAssociation.swift in Sources */,
 				03FCF56522B032A3000725CA /* Observable+Cache.swift in Sources */,
@@ -486,6 +498,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MARKETING_VERSION = 2.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ru.alexeyne.RxCache;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -514,6 +527,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MARKETING_VERSION = 2.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ru.alexeyne.RxCache;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
