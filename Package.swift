@@ -16,7 +16,7 @@ let package = Package(
         .target(
             name: "RxObservableCache",
             dependencies: ["RxSwift"],
-            path: "RxCache" // Необходим чтобы не переделывать пути на Source
+            path: "RxCache"
         )
     ]
 )

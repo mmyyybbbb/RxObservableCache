@@ -20,6 +20,7 @@
 		2FCA8CB524F3FCE80042E96E /* ThreadSafeDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCA8CB424F3FCE80042E96E /* ThreadSafeDictionary.swift */; };
 		3476979458F81905E153099B /* Pods_RxCache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D41B5983DA473D52A37A8FA /* Pods_RxCache.framework */; };
 		BF90588E353795794559A248 /* Pods_RxCacheTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA26A91C60A87994E8CD1166 /* Pods_RxCacheTests.framework */; };
+		CB3E7C462595E3650019C011 /* Import+Exported.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3E7C452595E3650019C011 /* Import+Exported.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		A625AAD66406AE9D19510B7A /* Pods-RxCacheTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxCacheTests.debug.xcconfig"; path = "Target Support Files/Pods-RxCacheTests/Pods-RxCacheTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BA26A91C60A87994E8CD1166 /* Pods_RxCacheTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxCacheTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB3E7C2F2595E10F0019C011 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		CB3E7C452595E3650019C011 /* Import+Exported.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Import+Exported.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 				0383202F22B052CB0025B662 /* Cacheble.swift */,
 				03FCF56622B032BD000725CA /* CacheGroupOption.swift */,
 				03FCF56022B0326A000725CA /* CacheRule.swift */,
+				CB3E7C452595E3650019C011 /* Import+Exported.swift */,
 			);
 			path = RxCache;
 			sourceTree = "<group>";
@@ -334,6 +337,7 @@
 				03FCF56922B032DB000725CA /* CacheContainer.swift in Sources */,
 				0383203022B052CB0025B662 /* Cacheble.swift in Sources */,
 				2FCA8CB524F3FCE80042E96E /* ThreadSafeDictionary.swift in Sources */,
+				CB3E7C462595E3650019C011 /* Import+Exported.swift in Sources */,
 				03FCF56722B032BD000725CA /* CacheGroupOption.swift in Sources */,
 				03FCF56322B03278000725CA /* CacheAssociation.swift in Sources */,
 				03FCF56522B032A3000725CA /* Observable+Cache.swift in Sources */,
