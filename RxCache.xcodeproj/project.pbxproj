@@ -54,6 +54,7 @@
 		6D41B5983DA473D52A37A8FA /* Pods_RxCache.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxCache.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A625AAD66406AE9D19510B7A /* Pods-RxCacheTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxCacheTests.debug.xcconfig"; path = "Target Support Files/Pods-RxCacheTests/Pods-RxCacheTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BA26A91C60A87994E8CD1166 /* Pods_RxCacheTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxCacheTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB3E7C2F2595E10F0019C011 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +81,7 @@
 		03FCF53922B02E35000725CA = {
 			isa = PBXGroup;
 			children = (
+				CB3E7C2F2595E10F0019C011 /* Package.swift */,
 				03FCF56A22B039E8000725CA /* RxObservableCache.podspec */,
 				03FCF54522B02E35000725CA /* RxCache */,
 				03FCF55022B02E35000725CA /* RxCacheTests */,
