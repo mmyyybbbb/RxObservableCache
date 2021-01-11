@@ -9,5 +9,5 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '9.0'
   s.swift_version = '5.0'
   s.source_files  = 'RxCache/**/*.{swift}'
-  s.dependency 'RxSwift', '~> 5.1.0'
+  s.dependency 'RxSwift', '~> 6.0.0'
 end
